@@ -1,0 +1,136 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 50px 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #2c3e50;
+    font-size: 32px;
+}
+
+
+.container {
+    font-size: 0; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+
+.block {
+    display: inline-block; 
+    width: 25%;
+    height: 65vh; 
+    font-size: 16px; 
+    vertical-align: top;
+    padding: 60px 30px;
+    
+   
+    border: 1px solid #dcdcdc;
+    border-right: none; 
+    position: relative;
+}
+
+
+.block:nth-child(4) {
+    border-right: 1px solid #dcdcdc;
+}
+
+.block h2 {
+    position: relative;
+    margin-top: 0;
+    padding-left: 25px; 
+    font-size: 22px;
+    color: #2c3e50;
+    z-index: 2; 
+}
+
+
+.block h2::before {
+    content: attr(data-num); 
+    position: absolute;
+    top: -45px;
+    left: -10px;
+    font-size: 70px;
+    font-weight: 800;
+    color: #e2e8f0; 
+    z-index: -1;
+}
+
+
+.block ul {
+    list-style: none; 
+    padding: 0;
+    margin: 40px 0 0 0;
+}
+
+.block li {
+    position: relative;
+    padding-left: 25px; 
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #555;
+}
+
+
+.block li::before {
+    content: "■"; 
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #3498db; 
+    font-size: 14px;
+}
+
+
+.block li:nth-child(even) {
+    color: #e74c3c; 
+}
+
+
+
+@media (max-width: 1000px) {
+    .block {
+        width: 50%;
+        height: 40vh; 
+        border-right: 1px solid #dcdcdc;
+        border-bottom: none;
+    }
+
+    .block:nth-child(even) {
+        border-right: none;
+    }
+    .block:nth-child(3), 
+    .block:nth-child(4) {
+        border-bottom: 1px solid #dcdcdc;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .block {
+        width: 100%;
+        height: auto;
+        min-height: 35vh;
+        border-right: 1px solid #dcdcdc !important;
+        border-bottom: none !important;
+    }
+    .block:last-child {
+        border-bottom: 1px solid #dcdcdc !important;
+    }
+}
